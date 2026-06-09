@@ -1,0 +1,41 @@
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background: transparent !important;
+}
+
+.marker-cluster div {
+  width: 50px !important;
+  height: 50px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  ) !important;
+
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.marker-cluster span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
