@@ -29,6 +29,8 @@ const reportSchema = new mongoose.Schema(    // Defining the schema for a report
         type: Number,
         required: true,
       },
+      
+      
     },
 
     status: {

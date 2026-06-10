@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ShieldCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = ({ search, setSearch }) => {
 
@@ -183,7 +184,7 @@ transition
                                     >
                                         {user?.name}
                                     </div>
-                                    <div
+                                    {/* <div
                                         style={{
                                             padding: "10px",
                                             borderRadius: "8px",
@@ -198,7 +199,7 @@ transition
                                         onClick={() => navigate("/")}
                                     >
                                         👤 Profile
-                                    </div>
+                                    </div> */}
 
                                     <div
                                         style={{
@@ -212,7 +213,7 @@ transition
                                         onMouseLeave={(e) => {
                                             e.currentTarget.style.background = "transparent";
                                         }}
-                                        onClick={() => navigate("/")}
+                                        onClick={() => navigate("/my-reports")}
                                     >
                                         📋 My Reports
                                     </div>

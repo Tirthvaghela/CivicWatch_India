@@ -9,6 +9,7 @@ import "leaflet/dist/leaflet.css";
 import { Toaster } from "react-hot-toast";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminRoute from "./components/AdminRoute";
+import MyReports from "./pages/MyReports";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
                 <AdminDashboard />
               </AdminRoute>}
             />
+          <Route path="/my-reports" element={<MyReports />} />                                              
           </Routes>
         </div>
       </div>

@@ -34,6 +34,8 @@ const CreateReport = () => {
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
 
+                
+
                 setForm(prev => ({
                     ...prev,
                     location: { latitude: lat, longitude: lng }

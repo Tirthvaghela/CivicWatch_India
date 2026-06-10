@@ -35,7 +35,11 @@ const ReportCard = ({ report }) => {
           {/* META */}
           <div className="flex items-center gap-6 text-sm text-gray-400 mt-3">
             <span>📍 {report.location?.latitude?.toFixed(2)}, {report.location?.longitude?.toFixed(2)}</span>
-            <span>🕒 {new Date(report.createdAt).toLocaleDateString()}</span>
+            <span>🕒 {new Date(report.createdAt).toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            })}</span>
           </div>
         </div>
 
