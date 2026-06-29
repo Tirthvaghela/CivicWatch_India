@@ -19,17 +19,31 @@ function App() {
         toastOptions={{
           duration: 3000,
           style: {
-            background: "#0f172a",
+            background: "#1a237e",
             color: "#fff",
             borderRadius: "12px",
-            padding: "16px",
+            padding: "14px 20px",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "14px",
+            border: "1px solid rgba(255, 153, 51, 0.3)",
+            boxShadow: "0 8px 32px rgba(26, 35, 126, 0.25)",
+          },
+          success: {
+            iconTheme: {
+              primary: "#FF9933",
+              secondary: "#fff",
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: "#ef4444",
+              secondary: "#fff",
+            },
           },
         }}
       />
 
-
-
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen bg-gov-cream font-poppins">
         <div className="w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -43,7 +57,7 @@ function App() {
                 <AdminDashboard />
               </AdminRoute>}
             />
-          <Route path="/my-reports" element={<MyReports />} />                                              
+            <Route path="/my-reports" element={<MyReports />} />
           </Routes>
         </div>
       </div>

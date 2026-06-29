@@ -2,18 +2,275 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════
+   CivicWatch India — Expressive Gov Theme
+   ═══════════════════════════════════════════ */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFF8F0;
+  color: #1a237e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-structure {
+  background-image: 
+    radial-gradient(rgba(26, 35, 126, 0.08) 1.5px, transparent 1.5px), 
+    linear-gradient(rgba(26, 35, 126, 0.03) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(26, 35, 126, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+  background-position: 0 0, 0 0, 0 0;
+  background-attachment: fixed;
+}
+
+/* ─── Tricolor Stripe ─── */
+.tricolor-stripe {
+  height: 4px;
+  background: linear-gradient(to right, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
   width: 100%;
-  min-height: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+}
+
+/* ─── Gov Inputs ─── */
+.gov-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  color: #1a237e;
+  background-color: white;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.gov-input:focus {
+  border-color: #FF9933;
+  box-shadow: 0 0 0 4px rgba(255, 153, 51, 0.15);
+}
+
+.gov-input::placeholder {
+  color: #cbd5e1;
+  font-weight: 300;
+}
+
+.gov-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ─── Gov Buttons ─── */
+.gov-btn-primary {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FF9933;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 153, 51, 0.3);
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.gov-btn-primary:hover {
+  background-color: #E65100;
+  box-shadow: 0 6px 20px rgba(255, 153, 51, 0.4);
+  transform: translateY(-1px);
+}
+
+.gov-btn-primary:active {
+  transform: translateY(0);
+}
+
+.gov-btn-secondary {
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid #1a237e;
+  color: #1a237e;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gov-btn-secondary:hover {
+  background-color: #1a237e;
+  color: white;
+}
+
+.gov-btn-outline {
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid #FF9933;
+  color: #FF9933;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gov-btn-outline:hover {
+  background-color: #FF9933;
+  color: white;
+}
+
+/* ─── Gov Cards ─── */
+.gov-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(26, 35, 126, 0.08);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s;
+}
+
+.gov-card:hover {
+  box-shadow: 0 8px 32px rgba(26, 35, 126, 0.16);
+  transform: translateY(-2px);
+}
+
+.gov-card-saffron {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(26, 35, 126, 0.08);
+  border: 1px solid #f1f5f9;
+  border-left: 4px solid #FF9933;
+  transition: all 0.3s;
+}
+
+.gov-card-saffron:hover {
+  box-shadow: 0 8px 32px rgba(26, 35, 126, 0.16);
+}
+
+.gov-card-navy {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(26, 35, 126, 0.08);
+  border: 1px solid #f1f5f9;
+  border-left: 4px solid #1a237e;
+  transition: all 0.3s;
+}
+
+.gov-card-navy:hover {
+  box-shadow: 0 8px 32px rgba(26, 35, 126, 0.16);
+}
+
+.gov-card-green {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(26, 35, 126, 0.08);
+  border: 1px solid #f1f5f9;
+  border-left: 4px solid #138808;
+  transition: all 0.3s;
+}
+
+.gov-card-green:hover {
+  box-shadow: 0 8px 32px rgba(26, 35, 126, 0.16);
+}
+
+/* ─── Gov Section Title ─── */
+.gov-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a237e;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ─── Gov Badges ─── */
+.gov-badge {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.gov-badge-pending {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #FFF3E0;
+  color: #E65100;
+  border: 1px solid #FFE0B2;
+  display: inline-block;
+}
+
+.gov-badge-progress {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #E8EAF6;
+  color: #283593;
+  border: 1px solid #C5CAE9;
+  display: inline-block;
+}
+
+.gov-badge-resolved {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #E8F5E9;
+  color: #1b5e20;
+  border: 1px solid #C8E6C9;
+  display: inline-block;
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5cae9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7986cb;
+}
+
+/* ─── Selection Color ─── */
+::selection {
+  background: #FF993344;
+  color: #1a237e;
 }

@@ -1,61 +1,62 @@
 import React from "react";
+import { User, Star } from "lucide-react";
 
 const ReportCard = ({ report }) => {
+  const statusConfig = {
+    RESOLVED: { class: "gov-badge-resolved", label: "Resolved", accent: "bg-gov-green" },
+    IN_PROGRESS: { class: "gov-badge-progress", label: "In Progress", accent: "bg-gov-navy" },
+    PENDING: { class: "gov-badge-pending", label: "Pending", accent: "bg-gov-saffron" },
+  };
+
+  const status = statusConfig[report.status] || statusConfig.PENDING;
+
   return (
-    <div className=" flex bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden p-4 gap-6 w-full max-w-4xl mx-auto">
+    <div className="bento-card p-5 relative overflow-hidden flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 animate-slide-up">
+      {/* Accent color bar */}
+      <div className={`absolute left-0 top-0 bottom-0 w-1 ${status.accent}`} />
 
-      {/* IMAGE */}
-      <img
-        src={report.imageUrl || "https://via.placeholder.com/200"}
-        alt="report"
-        className="w-40 h-40 rounded-xl object-cover"
-      />
-
-      {/* CONTENT */}
-      <div className="flex flex-col justify-between flex-1">
-
-        {/* TOP */}
+      {/* Left side details */}
+      <div className="flex items-center gap-4 pl-1">
+        <div className="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden shrink-0 border border-gray-200">
+          <img
+            src={report.imageUrl || "/civic_banner.png"}
+            alt="evidence"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div>
-          <h3 className="text-xl font-semibold text-gray-800 capitalize">
-            {report.issueType}
-          </h3>
-
-          <p className="text-gray-500 mt-1">
+          <h4 className="font-bold text-gov-navy capitalize text-sm font-poppins">
+            {report.issueType?.replace("_", " ")}
+          </h4>
+          <p className="text-[11px] text-gray-500 font-poppins mt-0.5 leading-snug max-w-[400px] line-clamp-2">
             {report.description}
           </p>
-
-          <p style={{ fontSize: "12px", color: "#64748b" }}>
-            👤 {report.reportedBy?.name || "Anonymous"}
-          </p>
-
-          <p style={{ fontSize: "12px", color: "#10b981" }}>
-            ⭐ Credibility: {report.reportedBy?.credibilityScore || 1}
-          </p>
-
-          {/* META */}
-          <div className="flex items-center gap-6 text-sm text-gray-400 mt-3">
-            <span>📍 {report.location?.latitude?.toFixed(2)}, {report.location?.longitude?.toFixed(2)}</span>
-            <span>🕒 {new Date(report.createdAt).toLocaleDateString("en-IN", {
-              day: "numeric",
-              month: "short",
-              year: "numeric"
-            })}</span>
+          <div className="flex flex-wrap items-center gap-2.5 text-[10px] text-gray-400 mt-2 font-poppins">
+            <span className="flex items-center gap-1">
+              <User size={10} />
+              {report.reportedBy?.name || "Citizen"}
+            </span>
+            <span>•</span>
+            <span className="text-gov-saffron font-semibold flex items-center gap-1">
+              <Star size={10} className="fill-gov-saffron text-gov-saffron" />
+              {report.credibilityScore || 1} pts
+            </span>
+            <span>•</span>
+            <span>
+              {new Date(report.createdAt).toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "short",
+              })}
+            </span>
           </div>
         </div>
+      </div>
 
-        {/* STATUS */}
-        <div className="mt-3">
-          <span
-            className={`px-4 py-1 text-sm font-medium rounded-full ${report.status === "RESOLVED"
-              ? "bg-green-100 text-green-700"
-              : report.status === "IN_PROGRESS"
-                ? "bg-blue-100 text-blue-700"
-                : "bg-yellow-100 text-yellow-700"
-              }`}
-          >
-            {report.status}
-          </span>
-        </div>
+      {/* Right side badge */}
+      <div className="shrink-0 pl-1 sm:pl-0">
+        <span className={status.class}>
+          {status.label}
+        </span>
       </div>
     </div>
   );
