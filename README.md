@@ -12,6 +12,8 @@ A community-driven civic issue reporting platform that empowers citizens to repo
 * Admin Dashboard for Report Management
 * Status Tracking (Pending, In Progress, Resolved)
 * Leaderboard & Community Participation
+* **New UI Upgrades:** Premium technical background grid patterns, custom circular watch favicon, and responsive SVG illustrations
+* **Vector Iconography:** Clean `lucide-react` SVG icon integration throughout all views, forms, and navigation menus
 
 ## 🛠 Tech Stack
 
@@ -70,10 +72,10 @@ Admin → Dashboard → Report Verification & Management
 * Analytics Dashboard
 * Multi-Language Support
 
-## 👩‍💻 Developer
+## 👩‍💻 Developers
 
-**Mimansa Patle**
-B.Tech CSE 
+* **Frontend Developer:** Tirth Vaghela
+* **Backend Developer:** Mimansa Patle
 
 ## ⭐ Project Objective
 
